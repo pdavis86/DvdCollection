@@ -1,6 +1,6 @@
 using System;
 
-namespace temp.Models
+namespace DvdCollection.Models
 {
     public class ErrorViewModel
     {

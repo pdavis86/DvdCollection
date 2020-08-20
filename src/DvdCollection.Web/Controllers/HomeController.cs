@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using temp.Models;
+using DvdCollection.Models;
 
-namespace temp.Controllers
+namespace DvdCollection.Controllers
 {
     public class HomeController : Controller
     {
@@ -20,9 +20,11 @@ namespace temp.Controllers
 
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("test");
+
             //todo: replace hard-coded api key
-            var svc = new DvdCollection.Core.Services.Omdb("14f56460");
-            
+            var svc = new DvdCollection.Core.Services.OmdbService("14f56460");
+
             //todo: replace hard-coded movie ID
             var movie = await svc.GetAsync("tt0088763");
 

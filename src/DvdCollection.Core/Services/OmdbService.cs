@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace DvdCollection.Core.Services
 {
-    public class Omdb
+    public class OmdbService : IService
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
 
-        public Omdb(string apiKey)
+        public OmdbService(string apiKey)
         {
             _httpClient = new HttpClient();
             _apiKey = apiKey;

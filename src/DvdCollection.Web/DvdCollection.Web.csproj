@@ -8,4 +8,10 @@
     <ProjectReference Include="..\DvdCollection.Core\DvdCollection.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="gulpfile.js" />
+    <Content Remove="package-lock.json" />
+    <Content Remove="package.json" />
+  </ItemGroup>
+
 </Project>
