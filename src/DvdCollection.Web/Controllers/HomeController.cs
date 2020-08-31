@@ -23,7 +23,7 @@ namespace DvdCollection.Controllers
             _logger.LogInformation("test");
 
             //todo: replace hard-coded api key
-            var svc = new DvdCollection.Core.Services.OmdbService("14f56460");
+            var svc = new Core.Services.OmdbService("14f56460");
 
             //todo: replace hard-coded movie ID
             var movie = await svc.GetAsync("tt0088763");
@@ -43,3 +43,10 @@ namespace DvdCollection.Controllers
         }
     }
 }
+
+
+//string inputContent;
+//using (StreamReader inputStreamReader = new StreamReader(InputFileUpload.PostedFile.InputStream))
+//{
+//    inputContent = inputStreamReader.ReadToEnd();
+//}
