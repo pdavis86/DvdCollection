@@ -1,0 +1,13 @@
+﻿@model IEnumerable<DvdCollection.Data.Models.MediaFile>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var movie in Model)
+{
+    <div>
+        <img src="@movie.PosterUrl" />
+        <a href="https://www.imdb.com/title/@movie.ImdbId" target="_blank">Open on IMDB</a>
+        <a href="/home/download?filename=@movie.FileName">Download</a>
+    </div>
+}
