@@ -10,7 +10,7 @@ namespace DvdCollection.Tests.Services
         public void Get_Valid_Ok()
         {
             //todo: replace hard-coded api key
-            var svc = new Core.Services.OmdbService("14f56460");
+            var svc = new Core.Services.OmdbService("{replaceme}");
 
             //todo: replace hard-coded movie ID
             var movie = svc.GetAsync("tt0088763").Result;

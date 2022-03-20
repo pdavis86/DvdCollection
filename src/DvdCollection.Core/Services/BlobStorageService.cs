@@ -101,5 +101,19 @@ namespace DvdCollection.Core.Services
             }
         }
 
+        public BlockBlobClient GetBlobReference(string containerName, string blobName)
+        {
+            var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+            return containerClient.GetBlockBlobClient(blobName);
+        }
+
+        public async Task<bool> DownloadToStreamAsync(string containerName, string blobName, Stream stream)
+        {
+            var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+            var blobClient = containerClient.GetBlockBlobClient(blobName);
+            var response = await blobClient.DownloadToAsync(stream);
+            return response.Status == 200;
+        }
+
     }
 }

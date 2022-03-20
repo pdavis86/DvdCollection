@@ -1,11 +1,13 @@
-﻿@model DvdCollection.Core.Models.Imdb.Movie
+﻿@model IEnumerable<DvdCollection.Data.Models.MediaFile>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-<img src="@Model.Poster" />
+@foreach (var movie in Model)
+{
+    <div>
+        <img src="@movie.PosterUrl" />
+        <a href="https://www.imdb.com/title/@movie.ImdbId" target="_blank">Open on IMDB</a>
+        <a href="/home/download?filename=@movie.FileName">Download</a>
+    </div>
+}

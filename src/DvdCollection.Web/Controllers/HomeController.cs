@@ -22,13 +22,36 @@ namespace DvdCollection.Controllers
         {
             _logger.LogInformation("test");
 
-            //todo: replace hard-coded api key
-            var svc = new Core.Services.OmdbService("14f56460");
+            ////todo: replace hard-coded api key
+            //var svc = new Core.Services.OmdbService("{replaceme}");
 
-            //todo: replace hard-coded movie ID
-            var movie = await svc.GetAsync("tt0088763");
+            ////todo: replace hard-coded movie ID
+            //var movie = await svc.GetAsync("{replaceme}");
 
-            return View("Index", movie);
+            //todo: replace hard-coded key
+            //var os = new Core.Services.OmdbService("{replaceme}");
+            //var ms = new Core.Services.MediaService(new Data.Context(), os);
+
+            var ctx = new Data.Context();
+            var recentMovies = ctx.MediaFiles.Take(12);
+
+            return View("Index", recentMovies);
+        }
+
+        public async Task<ActionResult> Download(string fileName)
+        {
+            //todo: replace hard-coded conn str
+            var bs = new Core.Services.BlobStorageService("DefaultEndpointsProtocol=https;AccountName=pauldavis;AccountKey={replaceme};EndpointSuffix=core.windows.net");
+            var containerName = "dvds";
+
+            var blob = bs.GetBlobReference(containerName, fileName);
+            var blobProps = blob.GetProperties().Value;
+
+            Response.Headers.Add("Content-Disposition", "attachment; filename=" + fileName);
+            Response.Headers.ContentLength = blobProps.ContentLength;
+            var response = await blob.DownloadToAsync(Response.Body);
+            //await bs.DownloadToStreamAsync(containerName, fileName, Response.Body);
+            return new EmptyResult();
         }
 
         public IActionResult Privacy()

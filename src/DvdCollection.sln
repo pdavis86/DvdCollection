@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DvdCollection.Web", "DvdCollection.Web\DvdCollection.Web.csproj", "{64CB38EA-E220-43CA-A05F-E047E52992D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvdCollection.Data", "DvdCollection.Data\DvdCollection.Data.csproj", "{968D81B7-E3A7-483E-AC97-4066817F99C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DvdCollection.Data", "DvdCollection.Data\DvdCollection.Data.csproj", "{968D81B7-E3A7-483E-AC97-4066817F99C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvdCollection.Core", "DvdCollection.Core\DvdCollection.Core.csproj", "{712267AF-406D-4BFE-B2A3-EE89AB94ABD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DvdCollection.Core", "DvdCollection.Core\DvdCollection.Core.csproj", "{712267AF-406D-4BFE-B2A3-EE89AB94ABD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvdCollection.Tests", "DvdCollection.Tests\DvdCollection.Tests.csproj", "{BC5E38A8-B8F7-4558-8424-7A24457E203B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DvdCollection.Tests", "DvdCollection.Tests\DvdCollection.Tests.csproj", "{BC5E38A8-B8F7-4558-8424-7A24457E203B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvdCollection.ImportUi", "DvdCollection.ImportUi\DvdCollection.ImportUi.csproj", "{C51ECAD8-F8C2-4ECD-A121-CA9B868BDBF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BC5E38A8-B8F7-4558-8424-7A24457E203B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC5E38A8-B8F7-4558-8424-7A24457E203B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5E38A8-B8F7-4558-8424-7A24457E203B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51ECAD8-F8C2-4ECD-A121-CA9B868BDBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51ECAD8-F8C2-4ECD-A121-CA9B868BDBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51ECAD8-F8C2-4ECD-A121-CA9B868BDBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51ECAD8-F8C2-4ECD-A121-CA9B868BDBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

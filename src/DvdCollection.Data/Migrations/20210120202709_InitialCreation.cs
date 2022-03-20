@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DvdCollection.Data.Migrations
 {
-    public partial class CreateItAll : Migration
+    public partial class InitialCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,14 @@ namespace DvdCollection.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    FileName = table.Column<string>(nullable: true),
+                    ImdbId = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true),
+                    Genre = table.Column<string>(nullable: true),
+                    PosterUrl = table.Column<string>(nullable: true),
+                    ReleaseDate = table.Column<DateTime>(nullable: true),
+                    RuntimeMinutes = table.Column<int>(nullable: true),
+                    ReleaseYear = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
